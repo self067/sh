@@ -4,25 +4,101 @@ $this->title = ' Товары категории ' . $products[0]['category'];
 
 ?>
 
-<div class="container">
-  <div class="row justify-content-center">
-
-    <?php foreach( $products as $product) { ?>
-      <div class="col-4">
-        <div class="product">
-          <div class="product-img">
-            <img src="/img/<?=$product['img']?>" alt="<?=$product['name']?>">
-          </div>
-          <div class="product-name"><?=$product['name']?></div>
-          <div class="product-descr">Состав: <?=$product['composition']?></div>
-          <div class="product-price">Цена: <?=$product['price']?> рублей</div>
-          <div class="product-buttons">
-            <a href="#" data-name="<?=$product['link_name']?>"  class="product-button__add btn btn-success">Заказать</a>
-            <a href="<?=Url::to(['product/index', 'name'=> $product['link_name']] )?>" type="button" class="product-button__more btn btn-primary">Подробнее</a>
-          </div>
-        </div>
-      </div>
-
-    <?php } ?>
-  </div>
+<div id="breadcrumbs">
+    <div class="container">
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li>Product results</li>
+        </ul>
+    </div>
+    <!-- / container -->
 </div>
+<!-- / body -->
+
+<div id="body">
+    <div class="container">
+        <div class="pagination">
+            <ul>
+                <li><a href="#"><span class="ico-prev"></span></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><span class="ico-next"></span></a></li>
+            </ul>
+        </div>
+        <div class="products-wrap">
+            <aside id="sidebar">
+                <div class="widget">
+                    <h3>Products per page:</h3>
+                    <fieldset>
+                        <input checked type="checkbox">
+                        <label>8</label>
+                        <input type="checkbox">
+                        <label>16</label>
+                        <input type="checkbox">
+                        <label>32</label>
+                    </fieldset>
+                </div>
+                <div class="widget">
+                    <h3>Sort by:</h3>
+                    <fieldset>
+                        <input checked type="checkbox">
+                        <label>Popularity</label>
+                        <input type="checkbox">
+                        <label>Date</label>
+                        <input type="checkbox">
+                        <label>Price</label>
+                    </fieldset>
+                </div>
+                <div class="widget">
+                    <h3>Condition:</h3>
+                    <fieldset>
+                        <input checked type="checkbox">
+                        <label>New</label>
+                        <input type="checkbox">
+                        <label>Used</label>
+                    </fieldset>
+                </div>
+                <div class="widget">
+                    <h3>Price range:</h3>
+                    <fieldset>
+                        <div id="price-range"></div>
+                    </fieldset>
+                </div>
+            </aside>
+            <div id="content">
+                <section class="products">
+
+                    <?php foreach( $products as $product) { ?>
+
+                    <article>
+                        <a href="<?=Url::to(['product/index', 'name'=> $product['link_name']] )?>"><img height=210 src="/img/<?=$product['img']?>" alt="<?=$product['name']?>" ></a>
+                        <h3><a href="<?=Url::to(['product/index', 'name'=> $product['link_name']] )?>"><?=$product['name']?></a></h3>
+                        <h4><a href="<?=Url::to(['product/index', 'name'=> $product['link_name']] )?>">$ <?=$product['price']?></a></h4>
+                        <a href="#" data-name="<?=$product['link_name']?>" class="btn-add">Add to cart</a>
+                    </article>
+
+                    <?php } ?>
+
+                </section>
+            </div>
+            <!-- / content -->
+        </div>
+        <div class="pagination">
+            <ul>
+                <li><a href="#"><span class="ico-prev"></span></a></li>
+                <li><a href="#">1</a></li>
+                <li class="active"><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><span class="ico-next"></span></a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- / container -->
+</div>
+<!-- / body -->
+

@@ -14,9 +14,9 @@ class CategoryController extends Controller
   }
 
   public function actionView($cat) {
-    $product = new Product();
-    $product = $product->getProductsCategory($cat);
-    return $this->render('view', compact('product'));
+    $products = new Product();
+    $products = $products->getProductsCategory($cat);
+    return $this->render('view', compact('products'));
   }
 
   public function actionSearch() {

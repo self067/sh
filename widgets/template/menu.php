@@ -6,7 +6,7 @@ use yii\helpers\Url;
     <div class="container">
         <div class="trigger"></div>
         <ul>
-            <li><a href="products.html">New collection</a></li>
+<!--            <li><a href="products.html">New collection</a></li>-->
 
 	    <?php foreach( $data as $cat) {?>
 
