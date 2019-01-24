@@ -33,7 +33,7 @@ AppAsset::register($this);
         <a href="/" id="logo" title="Diana’s jewelry">Diana’s jewelry</a>
         <div class="right-links">
             <ul>
-                <li><a href="<?=Url::to(['cart/cart'] )?>" class="cart"><span class="ico-products"></span><?=isset($_SESSION['cart.totalQuantity']) ? $_SESSION['cart.totalQuantity'] : 0?> products, $<?=isset($_SESSION['cart.totalSum']) ? $_SESSION['cart.totalSum'] : 0?></a></li>
+                <li><a href="<?=Url::to(['cart/open'] )?>" id="cart" class="cart menu-quantity"><span class="ico-products"></span><?=isset($_SESSION['cart.totalQuantity']) ? $_SESSION['cart.totalQuantity'] : 0?> products, $<?=isset($_SESSION['cart.totalSum']) ? $_SESSION['cart.totalSum'] : 0?></a></li>
 
                 <li><a href="#"><span class="ico-account"></span>Account</a></li>
                 <li><a href="#"><span class="ico-signout"></span>Sign out</a></li>

@@ -1,5 +1,4 @@
 <!--<h2 style="padding: 10px; text-align: center">Корзина</h2>-->
-<?php
 <?php use yii\helpers\Url;
 $this->title = 'Cart ';
 ?>
@@ -39,7 +38,7 @@ $this->title = 'Cart ';
                           <tr>
                               <td class="items">
                                   <div class="image">
-                                      <img src="/img/<?=$product['img']?>" alt="<?=$product['name']?>">
+                                      <img width=150 src="/img/<?=$product['img']?>" alt="<?=$product['name']?>">
                                   </div>
                                   <h3><a href="#"><?=$product['name']?></a></h3>
                                   <p><?=$product['brief']?></p>
