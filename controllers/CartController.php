@@ -56,7 +56,7 @@ class CartController extends Controller
     $session = Yii::$app->session;
     $session->open();
 
-    return $this->renderPartial('cart', compact('product', 'session'));
+    return $this->render('cart', compact('product', 'session'));
 //    return $this->renderPartial('cart', compact('session'));
 
   }
