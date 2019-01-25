@@ -49,7 +49,9 @@ $this->title = $product['name'];
                     <div class="actions">
                         <label>Quantity:</label>
                         <select><option>1</option></select>
-                        <a href="#" data-name="<?=$product['link_name']?>" class="btn-grey">Add to cart</a>
+
+                        <a href="#" data-name="<?=$product['link_name']?>" class="btn-grey product-button__add">Add to cart</a>
+
                     </div>
                 </div>
             </div>

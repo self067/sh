@@ -21,6 +21,7 @@ class Cart extends ActiveRecord
         'name' => $product['name'],
         'price' => $product['price'],
         'img' => $product['img'],
+         'brief' => $product['brief'],
     ];
     }
 

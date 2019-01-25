@@ -20,6 +20,7 @@ function openCart(event) {
 $('.product-button__add').on('click', function (event) {
   event.preventDefault();
   let name = $(this).data('name');
+
   console.log();
 
 //  ?????????????????????????????????????????
@@ -35,11 +36,10 @@ $('.product-button__add').on('click', function (event) {
       // alert('Success');
       $('#cart .modal-content').html(res);
 //    <?=isset($_SESSION['cart.totalQuantity']) ? $_SESSION['cart.totalQuantity'] : 0?> products, $<?=isset($_SESSION['cart.totalSum']) ? $_SESSION['cart.totalSum'] : 0?>
-      $('.menu-quantity').html('('+$('.total-quantity').html()+')');
+      $('.menu-quantity').html("<span class=\"ico-products\"></span>".'('+$('.total-quantity').html()+')');
     },
     error: function (xhr, ajaxOptions, thrownError) {
       alert(xhr.status +" "+thrownError);
-
     }
   });
 } );
@@ -56,9 +56,11 @@ $('.cart-table').on('click', '.delete', function () {
       // alert('Success');
       $('#cart .modal-content').html(res);
       if($('.total-quantity').html())
-        $('.menu-quantity').html('('+$('.total-quantity').html()+')');
+
+          $('.menu-quantity').html("<span class=\"ico-products\"></span>".
+          '('+$('.total-quantity').html()+')');
       else
-        $('.menu-quantity').html('(0)');
+        $('.menu-quantity').html("<span class=\"ico-products\"></span>".'0 products, $0');
 
     },
     error: function (xhr, ajaxOptions, thrownError) {
