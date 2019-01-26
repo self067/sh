@@ -12,8 +12,9 @@ use app\assets\AppAsset;
 use yii\helpers\Url;
 
 AppAsset::register($this);
+$this->beginPage();
 ?>
-<?php $this->beginPage() ?>
+
 <!DOCTYPE html>
 <html lang="<?= Yii::$app->language ?>">
 <head>
