@@ -25,5 +25,4 @@ class CategoryController extends Controller
     $product = $product->getSearchResults($search);
     return $this->render('search', compact('product', 'search'));
   }
-
 }
