@@ -15,7 +15,7 @@ $this->title = 'Cart ';
       <!-- / body -->
 
     <?php
-        if(is_array($session['cart'])) {
+        if(isset($session['cart']) && $_SESSION['cart.totalQuantity']>0) {
     ?>
 
       <div id="body">
@@ -62,7 +62,7 @@ $this->title = 'Cart ';
 <!--                      <p>+shippment: $30.00</p>-->
                       <h4>Total items in cart: <strong><?=$_SESSION['cart.totalQuantity']?></strong></h4>
                       <h3>Total to pay: <strong><?=$_SESSION['cart.totalSum']?></strong></h3>
-<!--                      <a href="--><?//=Url::to(['cart/order', 'name'=> $product['link_name']] )?><!--" class="btn-grey">Finalize and pay</a>-->
+<!--                  //=Url::to(['cart/order', 'name'=> $product['link_name']]-->
                       <a href="<?=Url::to(['cart/order'] )?>" class="btn-grey">Finalize and pay</a>
 
                   </div>

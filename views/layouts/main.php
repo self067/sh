@@ -25,8 +25,11 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
+<?php $this->beginBody() 
 
+//\app\utils\Dumper::dump($myVar);
+//В layouts\main.php добавть <?= \app\utils\Dumper::print() ?> перед <?php $this->beginBody() ?>
+?>
 
 <header id="header">
     <div class="container">

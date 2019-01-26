@@ -4,7 +4,7 @@ namespace app\controllers;
 use app\models\Product;
 use app\models\Cart;
 use Yii;
-use app\models\OrderGood;
+//use app\models\OrderGood;
 use app\models\Order;
 use yii\web\Controller;
 
@@ -30,7 +30,7 @@ class CartController extends Controller
         return $this->render('success', compact('session'));
       }
     }
-    $this->layout = 'empty-layout';
+//    $this->layout = 'empty-layout';
     return $this->render('order', compact('session', 'order'));
   }
 

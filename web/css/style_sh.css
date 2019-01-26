@@ -1,0 +1,18 @@
+.order-form {
+  margin-bottom: 30px;
+  text-align: right;
+}
+.form-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+.form-control {
+
+  margin-left: 20px;
+}
+
+.btn-success {
+  padding: 10px;
+  margin-top: 10px;
+}

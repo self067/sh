@@ -36,7 +36,7 @@ $('.product-button__add').on('click', function (event) {
       // alert('Success');
       $('#cart .modal-content').html(res);
 //    <?=isset($_SESSION['cart.totalQuantity']) ? $_SESSION['cart.totalQuantity'] : 0?> products, $<?=isset($_SESSION['cart.totalSum']) ? $_SESSION['cart.totalSum'] : 0?>
-      $('.menu-quantity').html("<span class=\"ico-products\"></span>".'('+$('.total-quantity').html()+')');
+      $('.menu-quantity').html('<span class="ico-products"></span>' + '(' + $('.total-quantity').html()+')');
     },
     error: function (xhr, ajaxOptions, thrownError) {
       alert(xhr.status +" "+thrownError);
@@ -57,17 +57,16 @@ $('.cart-table').on('click', '.delete', function () {
       $('#cart .modal-content').html(res);
       if($('.total-quantity').html())
 
-          $('.menu-quantity').html("<span class=\"ico-products\"></span>".
-          '('+$('.total-quantity').html()+')');
+          $('.menu-quantity').html("<span class=\"ico-products\"></span>"+'('+$('.total-quantity').html()+')');
       else
-        $('.menu-quantity').html("<span class=\"ico-products\"></span>".'0 products, $0');
+        $('.menu-quantity').html("<span class=\"ico-products\"></span>"+'0 products, $0');
 
     },
     error: function (xhr, ajaxOptions, thrownError) {
       alert(xhr.status +" "+thrownError);
     }
   });
-})
+});
 
 ////////////////////////////////////////////////////////////////////////
 $('.modal-content').on('click', '.btn-next', function () {
@@ -94,7 +93,7 @@ $('.modal-content').on('click', '.btn-next', function () {
 
 $('.modal-content').on('click', '.btn-close', function () {
   $('#cart').modal('hide');
-})
+});
 
 
 
