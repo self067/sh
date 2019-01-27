@@ -1,12 +1,12 @@
-<!--<h2 style="padding: 10px; text-align: center">Корзина</h2>-->
 <?php use yii\helpers\Url;
 $this->title = 'Cart ';
+
 ?>
 
       <div id="breadcrumbs">
           <div class="container">
               <ul>
-                  <li><a href="#">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li>Cart</li>
               </ul>
           </div>
@@ -15,7 +15,7 @@ $this->title = 'Cart ';
       <!-- / body -->
 
     <?php
-        if(isset($session['cart']) && $_SESSION['cart.totalQuantity']>0) {
+        if(isset($session['cart']) && isset($session['cart.totalQuantity'])) {
     ?>
 
       <div id="body">
@@ -33,6 +33,7 @@ $this->title = 'Cart ';
 
                           <?php
                           foreach( $session['cart'] as $id => $product) {
+//                            foreach( $session['cart'] as $id => $product) {
                           ?>
 
                           <tr>
@@ -60,8 +61,8 @@ $this->title = 'Cart ';
                   <div class="total-count">
 <!--                      <h4>Subtotal: $4 500.00</h4>-->
 <!--                      <p>+shippment: $30.00</p>-->
-                      <h4>Total items in cart: <strong><?=$_SESSION['cart.totalQuantity']?></strong></h4>
-                      <h3>Total to pay: <strong><?=$_SESSION['cart.totalSum']?></strong></h3>
+                      <h4>Total items in cart: <strong class="total-quantity"><?=$_SESSION['cart.totalQuantity']?></strong></h4>
+                      <h3>Total to pay: <strong class="total-sum"><?=$_SESSION['cart.totalSum']?></strong></h3>
 <!--                  //=Url::to(['cart/order', 'name'=> $product['link_name']]-->
                       <a href="<?=Url::to(['cart/order'] )?>" class="btn-grey">Finalize and pay</a>
 
@@ -73,15 +74,16 @@ $this->title = 'Cart ';
           <!-- / container -->
       </div>
       <!-- / body -->
-
-<!--    <td class="total-quantity text-align-right">--><?//=$session['cart.totalQuantity']?><!--</td>-->
-
+          <!--//???-->
+          <span id="total-q"><?=$_SESSION['cart.totalQuantity']?></span>
+          <span id="total-s"><?=$_SESSION['cart.totalSum']?></span>
+          <!--//???-->
 
 <?php } else{ ?>
 <div class="order-status">
   <h3>Ваша корзина пуста </h3>
 </div>
-<!--<button type="button" class="btn btn-secondary btn-close" style="width: 200px;">Начать покупки</button>-->
+
 <?php
 }
 ?>

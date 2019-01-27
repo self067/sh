@@ -17,17 +17,19 @@ $this->title = ' Товары категории ' . $products[0]['category'];
 
 <div id="body">
     <div class="container">
-        <div class="pagination">
-            <ul>
-                <li><a href="#"><span class="ico-prev"></span></a></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#"><span class="ico-next"></span></a></li>
-            </ul>
-        </div>
+
+<!--        <div class="pagination">-->
+<!--            <ul>-->
+<!--                <li><a href="#"><span class="ico-prev"></span></a></li>-->
+<!--                <li><a href="#">1</a></li>-->
+<!--                <li class="active"><a href="#">2</a></li>-->
+<!--                <li><a href="#">3</a></li>-->
+<!--                <li><a href="#">4</a></li>-->
+<!--                <li><a href="#">5</a></li>-->
+<!--                <li><a href="#"><span class="ico-next"></span></a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
+
         <div class="products-wrap">
             <aside id="sidebar">
                 <div class="widget">
@@ -88,17 +90,17 @@ $this->title = ' Товары категории ' . $products[0]['category'];
             </div>
             <!-- / content -->
         </div>
-        <div class="pagination">
-            <ul>
-                <li><a href="#"><span class="ico-prev"></span></a></li>
-                <li><a href="#">1</a></li>
-                <li class="active"><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#"><span class="ico-next"></span></a></li>
-            </ul>
-        </div>
+<!--        <div class="pagination">-->
+<!--            <ul>-->
+<!--                <li><a href="#"><span class="ico-prev"></span></a></li>-->
+<!--                <li><a href="#">1</a></li>-->
+<!--                <li class="active"><a href="#">2</a></li>-->
+<!--                <li><a href="#">3</a></li>-->
+<!--                <li><a href="#">4</a></li>-->
+<!--                <li><a href="#">5</a></li>-->
+<!--                <li><a href="#"><span class="ico-next"></span></a></li>-->
+<!--            </ul>-->
+<!--        </div>-->
     </div>
     <!-- / container -->
 </div>

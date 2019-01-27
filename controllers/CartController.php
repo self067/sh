@@ -10,26 +10,29 @@ use yii\web\Controller;
 
 class CartController extends Controller
 {
-
   public function actionOrder() {
     $session = Yii::$app->session;
     $session->open();
     $order = new Order();
+    if( isset( $session['cart.totalQuantity'])){
     if( $order->load(Yii::$app->request->post())){
       $order->date = date('Y-m-d H:i:s');
       $order->sum = $session['cart.totalSum'];
+
       if($order->save()) {
         Yii::$app->mailer->compose()
-          ->setFrom(['seltor@mail.ru'=> 'ok sel'])
-          ->setTo(['seltor@mail.ru'])
+          ->setFrom(['diana@jktu.ru'=> 'Dianas Jewelry'])
+          ->setTo($order['email'])
           ->setSubject('Ваш заказ принят')
           ->send();
-        $session->remove('cart');
-        $session->remove('cart.totalSum');
-        $session->remove('cart.totalQuantity');
-        return $this->render('success', compact('session'));
+//        $session['order'] = $session['cart'];
+//        $session->remove('cart');
+//        $session->remove('cart.totalSum');
+//        $session->remove('cart.totalQuantity');
+        return $this->render('success', compact('session', 'order'));
       }
     }
+    }else return $this->goHome();
 //    $this->layout = 'empty-layout';
     return $this->render('order', compact('session', 'order'));
   }
@@ -38,9 +41,8 @@ class CartController extends Controller
     $session = Yii::$app->session;
     $session->open();
     $cart = new Cart();
-    $cart->recalcCart($id);
-    return $this->renderPartial('cart', compact('session'));
-
+    $cart->removeFromCart($id);
+    return $this->renderPartial('cart', compact('id', 'session'));
   }
 
   public function actionClear() {
@@ -58,7 +60,6 @@ class CartController extends Controller
 
     return $this->render('cart', compact('product', 'session'));
 //    return $this->renderPartial('cart', compact('session'));
-
   }
   public function actionAdd($name) {
     $product = new Product();
