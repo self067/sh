@@ -1,9 +1,5 @@
 <?php
 
-/* @var $this \yii\web\View */
-/* @var $content string */
-
-//use app\widgets\Alert;
 use yii\helpers\Html;
 //use yii\bootstrap\Nav;
 //use yii\bootstrap\NavBar;
@@ -29,7 +25,7 @@ $this->beginPage();
 <?php $this->beginBody() 
 
 //\app\utils\Dumper::dump($myVar);
-//В layouts\main.php добавть <?= \app\utils\Dumper::print() ?> перед <?php $this->beginBody() ?>
+//В layouts\main.php добавть  \app\utils\Dumper::print()
 ?>
 
 <header id="header">

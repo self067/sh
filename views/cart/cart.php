@@ -78,7 +78,9 @@ $this->title = 'Cart ';
 
 
 <?php } else{ ?>
+          <div class="order-status">
 <h3>Ваша корзина пуста </h3>
+          </div>
 <!--<button type="button" class="btn btn-secondary btn-close" style="width: 200px;">Начать покупки</button>-->
 <?php
 }
