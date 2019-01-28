@@ -1,5 +1,12 @@
 <?php
+ini_set('error_reporting', E_ALL);
+ini_set('display_errors', 1);
 
+$this->registerLinkTag([
+    'rel' => 'shortcut icon',
+    'type' => 'image/x-icon',
+    'href' => '/web/favicon.ico',
+]);
 use yii\helpers\Html;
 //use yii\bootstrap\Nav;
 //use yii\bootstrap\NavBar;

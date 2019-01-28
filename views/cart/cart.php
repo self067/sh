@@ -75,8 +75,8 @@ $this->title = 'Cart ';
       </div>
       <!-- / body -->
           <!--//???-->
-          <span id="total-q"><?=$_SESSION['cart.totalQuantity']?></span>
-          <span id="total-s"><?=$_SESSION['cart.totalSum']?></span>
+          <span id="total-q"><?=isset($_SESSION['cart.totalQuantity'])?$_SESSION['cart.totalQuantity']:0?></span>
+          <span id="total-s"><?=isset($_SESSION['cart.totalSum'])?$_SESSION['cart.totalSum']:0?></span>
           <!--//???-->
 
 <?php } else{ ?>

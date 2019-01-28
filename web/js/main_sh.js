@@ -21,7 +21,6 @@ $('.product-button__add').on('click', function (event) {
   event.preventDefault();
   let name = $(this).data('name');
   console.log(name);
-
   $.ajax({
     url: '/cart/add',
     data: {name: name},
@@ -52,10 +51,11 @@ $('.cart-table').on('click', '.delete', function () {
     type: 'GET',
     success: function(res) {
       // alert('Success');
-      $('#cart .modal-content').html(res);
-
-      // console.log(res);
+      // $('#cart .modal-content').html(res);
+      $('.modal-content').html(res);
+    console.log(res);
       console.log($("#total-q").html());
+      console.log($("#total-s").html());
       if($('#total-q').html())
         $('.menu-quantity').html('<span class="ico-products"></span>'+$("#total-q").html()+' products, $'+$("#total-s").html());
       else
