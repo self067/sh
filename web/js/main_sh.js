@@ -33,7 +33,7 @@ $('.cart-table').on('click', 'td.delete', function () {
     type: 'GET',
     success: function(res) {
 
-      console.log(res);
+      // console.log(res);
       // $('#cart-content').html(res);
       // $('#cart-content').html('');
       $('#cont').html(res);
