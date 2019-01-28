@@ -1,3 +1,7 @@
+h2  {
+  font-size: 20px;
+}
+
 .order-form {
   margin-top: 120px;
   margin-bottom: 70px;
@@ -23,7 +27,7 @@ label.control-label {
 }
 
 .order-status {
-  margin: 50px;
+  margin: 50px 0 30px;
 }
 
 #total-q, #total-s {

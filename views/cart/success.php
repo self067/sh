@@ -1,6 +1,8 @@
+<div class="container">
 <div class="order-status">
-
-  <h2>Thanks for your order!</h2>
+  <h2>Thanks for your order №<?=$order->id?></h2>
+</div>
+</div>
   <?php
   if(isset($session['cart']) && isset($_SESSION['cart.totalQuantity'])) {
 //  if(isset($session['order']) ) {
@@ -58,4 +60,4 @@
   $session->remove('cart.totalSum');
   $session->remove('cart.totalQuantity');
   ?>
-</div>
+

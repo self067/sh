@@ -35,7 +35,6 @@ class Cart extends ActiveRecord
     $price = isset($_SESSION['cart'][$id]['price'])?$_SESSION['cart'][$id]['price'] * $quantity:0;
     $_SESSION['cart.totalQuantity']  -= $quantity;
     $_SESSION['cart.totalSum'] -= $price;
-
     unset($_SESSION['cart'][$id]);
   }
 }

@@ -1,7 +1,10 @@
+<!--<div id="cart-content">-->
 <?php use yii\helpers\Url;
 $this->title = 'Cart ';
 
 ?>
+  <span id="total-q"><?=isset($_SESSION['cart.totalQuantity'])?$_SESSION['cart.totalQuantity']:0?></span>
+  <span id="total-s"><?=isset($_SESSION['cart.totalSum'])?$_SESSION['cart.totalSum']:0?></span>
 
       <div id="breadcrumbs">
           <div class="container">
@@ -15,7 +18,7 @@ $this->title = 'Cart ';
       <!-- / body -->
 
     <?php
-        if(isset($session['cart']) && isset($session['cart.totalQuantity'])) {
+        if(isset($session['cart']) && $session['cart.totalQuantity']>0) {
     ?>
 
       <div id="body">
@@ -51,7 +54,7 @@ $this->title = 'Cart ';
                               <td class="total">$<?=number_format($product['price']*$product['productQuantity'])?></td>
                               <td class="delete" data-id="<?=$id?>" style="cursor: pointer;"><span class="ico-del"></span></td>
                           </tr>
-<!--                                  <td class="delete" data-id="--><?//=$id?><!--" style="text-align: center; cursor: pointer; vertical-align: middle; color: red"><span>&#10006;</span></td>-->
+
 
                           <?php } ?>
 
@@ -75,15 +78,16 @@ $this->title = 'Cart ';
       </div>
       <!-- / body -->
           <!--//???-->
-          <span id="total-q"><?=isset($_SESSION['cart.totalQuantity'])?$_SESSION['cart.totalQuantity']:0?></span>
-          <span id="total-s"><?=isset($_SESSION['cart.totalSum'])?$_SESSION['cart.totalSum']:0?></span>
           <!--//???-->
 
 <?php } else{ ?>
-<div class="order-status">
-  <h3>Ваша корзина пуста </h3>
+<div class="container">
+  <div class="order-status">
+    <h2>Ваша корзина пуста </h2>
+  </div>
 </div>
 
 <?php
 }
 ?>
+<!--</div>-->
