@@ -26,10 +26,10 @@ class CartController extends Controller
       $order->sum = $session['cart.totalSum'];
 
       if($order->save()) {
-        Yii::$app->mailer->compose()
-          ->setFrom(['diana@jktu.ru'=> 'Dianas Jewelry'])
+        Yii::$app->mailer->compose('order-mail', ['session'=>$session, 'order'=>$order])
+          ->setFrom(['self67@list.ru'=> 'Dianas Jewelry'])
           ->setTo($order['email'])
-          ->setSubject('Ваш заказ принят')
+          ->setSubject('Ваш заказ №'.$order->id.' принят')
           ->send();
         return $this->render('success', compact('session', 'order'));
       }
