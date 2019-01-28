@@ -17,8 +17,8 @@
                 <td style="padding: 8px; border: 1px solid #ddd">
                     <?=$item['name']?></td>
                 <td style="padding: 8px; border: 1px solid #ddd"><?=$item['productQuantity']?></td>
-                <td style="padding: 8px; border: 1px solid #ddd">$<?=$item['price'] ?> </td>
-                <td style="padding: 8px; border: 1px solid #ddd">$<?=$item['price']*$item['productQuantity'] ?> </td>
+                <td style="padding: 8px; border: 1px solid #ddd">$<?=$item['price'] ?></td>
+                <td style="padding: 8px; border: 1px solid #ddd">$<?=$item['price']*$item['productQuantity'] ?></td>
             </tr>
         <?php } ?>
         <tr>
@@ -27,7 +27,7 @@
         </tr>
         <tr>
             <td colspan="3">На сумму:</td>
-            <td><b><?=$session['cart.totalSum'] ?></b> рублей</td>
+            <td><b>$<?=$session['cart.totalSum'] ?></b></td>
         </tr>
         </tbody>
     </table>

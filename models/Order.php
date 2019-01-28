@@ -11,6 +11,10 @@ class Order extends \yii\db\ActiveRecord
         return 'order';
     }
 
+    public function getOrderGoods() {
+      return $this->hasMany(OrderGood::class, ['order_id' => 'id']);
+    }
+
     public function rules()
     {
         return [

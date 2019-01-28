@@ -39,6 +39,10 @@ class CartController extends Controller
     return $this->render('order', compact('session', 'order'));
   }
 
+  protected function saveOrderInfo() {
+
+  }
+
   public function actionDelete($id) {
     $session = Yii::$app->session;
     $session->open();
