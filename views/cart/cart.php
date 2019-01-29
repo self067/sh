@@ -1,21 +1,16 @@
 <!--<div id="cart-content">-->
-<?php use yii\helpers\Url;
+<?php
+use yii\helpers\Url;
+
 $this->title = 'Cart ';
+$this->params['breadcrumbs'][] = [
+//  'template' => "<li><b>{link}</b></li>\n", //  шаблон для этой ссылки
+//  'template' => "<li><b>{link}</b></li>\n", //  шаблон для этой ссылки
+  'label' => 'Cart', // название ссылки
+  'url' => ['/cart/open'] // сама ссылка
+];
 
 ?>
-  <span id="total-q"><?=isset($_SESSION['cart.totalQuantity'])?$_SESSION['cart.totalQuantity']:0?></span>
-  <span id="total-s"><?=isset($_SESSION['cart.totalSum'])?$_SESSION['cart.totalSum']:0?></span>
-
-      <div id="breadcrumbs">
-          <div class="container">
-              <ul>
-                  <li><a href="/">Home</a></li>
-                  <li>Cart</li>
-              </ul>
-          </div>
-          <!-- / container -->
-      </div>
-      <!-- / body -->
 
     <?php
         if(isset($session['cart']) && $session['cart.totalQuantity']>0) {
@@ -65,7 +60,7 @@ $this->title = 'Cart ';
 <!--                      <h4>Subtotal: $4 500.00</h4>-->
 <!--                      <p>+shippment: $30.00</p>-->
                       <h4>Total items in cart: <strong class="total-quantity"><?=$_SESSION['cart.totalQuantity']?></strong></h4>
-                      <h3>Total to pay: <strong class="total-sum"><?=$_SESSION['cart.totalSum']?></strong></h3>
+                      <h3>Total to pay: $<strong class="total-sum"><?=$_SESSION['cart.totalSum']?></strong></h3>
 <!--                  //=Url::to(['cart/order', 'name'=> $product['link_name']]-->
                       <a href="<?=Url::to(['cart/order'] )?>" class="btn-grey">Finalize and pay</a>
 
@@ -90,4 +85,7 @@ $this->title = 'Cart ';
 <?php
 }
 ?>
+<span id="total-q"><?=isset($_SESSION['cart.totalQuantity'])?$_SESSION['cart.totalQuantity']:0?></span>
+<span id="total-s"><?=isset($_SESSION['cart.totalSum'])?$_SESSION['cart.totalSum']:0?></span>
+
 <!--</div>-->

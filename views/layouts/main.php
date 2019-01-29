@@ -7,12 +7,23 @@ $this->registerLinkTag([
     'type' => 'image/x-icon',
     'href' => '/web/favicon.ico',
 ]);
+
 use yii\helpers\Html;
-//use yii\bootstrap\Nav;
-//use yii\bootstrap\NavBar;
-//use yii\widgets\Breadcrumbs;
+use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
 use yii\helpers\Url;
+
+
+//$controller = Yii::$app->controller;
+//$default_controller = Yii::$app->defaultRoute;
+//$isHome = (($controller->id === $default_controller) && ($controller->action->id === $controller->defaultAction)) ? true : false;
+
+$isHome = false;
+//if(Yii::$app->controller->id==Yii::$app->defaultController
+//   && Yii::$app->controller->action->id==Yii::$app->controller->defaultAction)
+
+
+if( Yii::$app->controller->id=='cart' &&  Yii::$app->controller->action->id=='index')    $isHome = true;
 
 AppAsset::register($this);
 $this->beginPage();
@@ -29,11 +40,8 @@ $this->beginPage();
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() 
 
-//\app\utils\Dumper::dump($myVar);
-//В layouts\main.php добавть  \app\utils\Dumper::print()
-?>
+<?php $this->beginBody();?>
 
 <header id="header">
     <div class="container">
@@ -51,9 +59,32 @@ $this->beginPage();
 </header>
 <!-- / header -->
 
-    <div id="cont">
-        <?= $content ?>
+<!--    <div id="cont">-->
+
+
+<!--<div class="container">-->
+<?php if( $isHome){?>
+    <div id="breadcrumbs">
+        <div class="container">
+            <ul>
+<!--                <li><a href="/">Home</a></li>-->
+                <li>
+                  <?= Breadcrumbs::widget([
+                    'homeLink' => ['label' => 'HOME', 'url' => '/'],
+                    'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
+                  ]) ?>
+
+                </li>
+            </ul>
+        </div>
+        <!-- / container -->
     </div>
+<?php }?>
+<!-- / body -->
+
+  <?= $content ?>
+
+<!--    </div>-->
 
 <footer id="footer">
     <div class="container">
@@ -106,7 +137,7 @@ $this->beginPage();
   </div>
 </div>
 
-<?php $this->endBody() ?>
+<?php $this->endBody(); ?>
 </body>
 </html>
 <?php $this->endPage() ?>
