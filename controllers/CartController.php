@@ -30,6 +30,7 @@ class CartController extends Controller
           ->setFrom(['self67@list.ru'=> 'Dianas Jewelry'])
           ->setTo($order['email'])
           ->setSubject('Ваш заказ №'.$order->id.' принят')
+          ->setBcc('seltor@mail.ru')
           ->send();
         return $this->render('success', compact('session', 'order'));
       }

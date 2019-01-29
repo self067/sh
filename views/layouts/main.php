@@ -58,22 +58,17 @@ $this->beginPage();
     <!-- / container -->
 </header>
 <!-- / header -->
-
-<!--    <div id="cont">-->
-
-
+<?=\app\widgets\MenuWidget::widget()?>
 <!--<div class="container">-->
-<?php if( $isHome){?>
+<?php if( isset($this->params['breadcrumbs'])){?>
     <div id="breadcrumbs">
         <div class="container">
             <ul>
-<!--                <li><a href="/">Home</a></li>-->
                 <li>
                   <?= Breadcrumbs::widget([
                     'homeLink' => ['label' => 'HOME', 'url' => '/'],
                     'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
                   ]) ?>
-
                 </li>
             </ul>
         </div>
@@ -81,10 +76,9 @@ $this->beginPage();
     </div>
 <?php }?>
 <!-- / body -->
-
+<div id="cont">
   <?= $content ?>
-
-<!--    </div>-->
+</div>
 
 <footer id="footer">
     <div class="container">

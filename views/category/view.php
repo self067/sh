@@ -1,4 +1,3 @@
-<?=\app\widgets\MenuWidget::widget()?>
 <?php use yii\helpers\Url;
 $this->title = ' Товары категории ' . $products[0]['category'];
 

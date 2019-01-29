@@ -1,10 +1,9 @@
 <!--<div id="cart-content">-->
 <?php
 use yii\helpers\Url;
-
+//use yii\widgets\Breadcrumbs;
 $this->title = 'Cart ';
 $this->params['breadcrumbs'][] = [
-//  'template' => "<li><b>{link}</b></li>\n", //  шаблон для этой ссылки
 //  'template' => "<li><b>{link}</b></li>\n", //  шаблон для этой ссылки
   'label' => 'Cart', // название ссылки
   'url' => ['/cart/open'] // сама ссылка

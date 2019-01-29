@@ -1,4 +1,4 @@
-<?=\app\widgets\MenuWidget::widget()?>
+
 <?php use yii\helpers\Url;
 
 $this->title = $product['name'];

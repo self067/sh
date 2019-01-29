@@ -1,4 +1,3 @@
-<?=\app\widgets\MenuWidget::widget()?>
 <?php use yii\helpers\Url;
 //$this->title = Yii::$app->name . ' Магазин '; // . $model->name;
 $this->title = ' DIANA’S JEWELRY ';
