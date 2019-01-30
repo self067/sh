@@ -24,7 +24,7 @@ $this->title = $product['name'];
                 </div>
                 <div class="details">
                     <h1><?=$product['name']?></h1>
-                    <h4>$<?=$product['price']?></h4>
+                    <h4>$<?=number_format($product['price'], 0, ".",",")?></h4>
                     <div class="entry">
                         <p><?=$product['brief']?></p>
                         <div class="tabs">

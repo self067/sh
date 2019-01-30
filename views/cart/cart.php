@@ -59,7 +59,7 @@ $this->params['breadcrumbs'][] = [
 <!--                      <h4>Subtotal: $4 500.00</h4>-->
 <!--                      <p>+shippment: $30.00</p>-->
                       <h4>Total items in cart: <strong class="total-quantity"><?=$_SESSION['cart.totalQuantity']?></strong></h4>
-                      <h3>Total to pay: $<strong class="total-sum"><?=$_SESSION['cart.totalSum']?></strong></h3>
+                      <h3>Total to pay: $<strong class="total-sum"><?=number_format($_SESSION['cart.totalSum'], 0, ".",",")?></strong></h3>
 <!--                  //=Url::to(['cart/order', 'name'=> $product['link_name']]-->
                       <a href="<?=Url::to(['cart/order'] )?>" class="btn-grey">Finalize and pay</a>
 

@@ -77,6 +77,6 @@ class CartController extends Controller
     $cart = new Cart();
     $cart->addToCart($product);
 //    $this->layout = 'empty-layout';
-    return $this->renderPartial('cart', compact('product', 'session'));
+    return    $this->renderPartial('cart', compact('product', 'session'));
   }
 }

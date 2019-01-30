@@ -19,7 +19,7 @@ class Product extends ActiveRecord
   public function getAllProducts() {
     $products = Yii::$app->cache->get('products');
     if(!$products) {
-      $products = Product::find()->asArray()->orderBy('category')->all();
+      $products = Product::find()->asArray()->orderBy(['id'=>SORT_DESC])->limit(10)->all();
       Yii::$app->cache->set('products', $products, 120);
     }
     return $products;
